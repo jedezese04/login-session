@@ -1,0 +1,26 @@
+<%- include('./template/header') %>
+<div class="container" style="max-width: 550px;">
+    <% if(error) { %>
+        <div class="alert alert-danger my-4 login-error"><%= error %></div>
+    <% } %>  
+    <h2 class="text-center my-4">Login</h2>
+    <form action="/login" method="post">
+        <div class="my-2">
+            <label for="username" class="form-label">Username</label>
+            <input type="text" name="username" class="form-control">
+        </div>
+        <div class="my-2">
+            <label for="password" class="form-label">Password</label>
+            <input type="password" name="password" class="form-control">
+        </div>
+        <div class="my-2 d-flex justify-content-end">
+            <button type="submit" class="btn btn-outline-primary">Login</button>
+        </div>
+    </form>
+</div>
+<script>
+    setTimeout(() => {
+        document.querySelector('.login-error').remove()
+    }, 3000)
+</script>
+<%- include('./template/footer') %>
